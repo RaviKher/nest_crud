@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserEntity } from './users/user';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -15,7 +16,7 @@ import { UsersModule } from './users/users.module';
     database:'test',
     entities: [UserEntity],
     synchronize: true,
-  }), UsersModule],
+  }), UsersModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
